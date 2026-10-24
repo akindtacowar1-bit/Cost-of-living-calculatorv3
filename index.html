@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cost of living savings calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5f9;--card:#ffffff;--ink:#13203b;--mute:#5a6781;--line:#dde2ec;--red:#d9001b;--red-ink:#ffffff;--soft:#fde8eb;
+  --disp:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Public Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0e1424;--card:#172038;--ink:#eef1f8;--mute:#9aa6c2;--line:#2a3555;--red:#ff4d63;--red-ink:#1a0509;--soft:#3a1a26;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0e1424;--card:#172038;--ink:#eef1f8;--mute:#9aa6c2;--line:#2a3555;--red:#ff4d63;--red-ink:#1a0509;--soft:#3a1a26;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 var(--body)}
+.wrap{max-width:880px;margin:0 auto;padding:40px 18px 60px}
+h1{font:800 clamp(2rem,6vw,3.2rem)/1.02 var(--disp);letter-spacing:-.02em;margin:0 0 10px}
+.lead{color:var(--mute);font-size:1.05rem;margin:0 0 28px;max-width:640px}
+.picks{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:700px){.picks{grid-template-columns:1fr 1fr}}
+.pick{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;text-decoration:none;color:inherit}
+.pick:hover{border-color:var(--red)}
+.pick h2{font:700 1.4rem/1.15 var(--disp);margin:0 0 6px}
+.pick p{color:var(--mute);margin:0 0 18px;font-size:.95rem}
+.pick ul{margin:0 0 20px;padding-left:18px;font-size:.92rem}
+.pick li{margin-bottom:4px}
+.go{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;height:46px;border-radius:10px;background:var(--red);color:var(--red-ink);font-weight:700}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.fine{color:var(--mute);font-size:.82rem;margin-top:28px;max-width:640px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>What could you save?</h1>
+  <p class="lead">Estimate your yearly savings from Labor’s $30 toll cap, $30 fare cap and Free Kinder. Choose the calculator that suits you.</p>
+  <div class="picks">
+    <a class="pick" href="simple.html">
+      <h2>Quick calculator</h2>
+      <p>Best if everyone in your household travels in a similar way.</p>
+      <ul><li>Number of vehicles and one typical toll cost</li><li>Number of travellers and one typical fare</li><li>Free Kinder for each child</li></ul>
+      <span class="go">Use the quick calculator</span>
+    </a>
+    <a class="pick" href="detailed.html">
+      <h2>Detailed calculator</h2>
+      <p>Best if each vehicle or person travels differently.</p>
+      <ul><li>Days and toll cost for each vehicle</li><li>Days and fare cost for each traveller, with concessions</li><li>Free Kinder for each child</li></ul>
+      <span class="go">Use the detailed calculator</span>
+    </a>
+  </div>
+  <p class="fine">Unofficial estimates based on published Victorian Labor commitments. These are election promises that depend on Labor being re-elected.</p>
+</div>
+</body>
+</html>
